@@ -1,0 +1,147 @@
+x0=[1; 2]
+
+x0 =
+
+     1
+     2
+
+x=newton('F','J',x0,100,1.0e-4)
+
+x =
+
+     1
+     2
+
+
+F =
+
+    -1
+     2
+
+
+J =
+
+     0     2
+     4     2
+
+
+x =
+
+    0.2500
+    2.5000
+
+
+x =
+
+    0.4187
+    2.3135
+
+
+x =
+
+    0.4353
+    2.2968
+
+
+x =
+
+    0.4354
+    2.2966
+
+
+x =
+
+    0.4354
+    2.2966
+
+% That converged very quickly to a solution to the system of equations.
+%
+% Next, a problem where nonnegativity constraints are important.
+%
+x0=10
+
+x0 =
+
+    10
+
+x=newton('F2','J2',x0,100,1.0e-4)
+
+x =
+
+    10
+
+
+F =
+
+    1.3026
+
+
+J =
+
+    0.1000
+
+
+x =
+
+   -3.0259
+
+
+x =
+
+   -3.0259
+
+
+F2(x)
+
+ans =
+
+   NaN
+
+% This isn't a correct solution, but the Newton's method code
+% stopped on the NaN.  
+%
+% Next, we'll try a version of Newton's method modified to keep
+% x >= 0.
+%
+x=newtonnneg('F2','J2',x0,100,1.0e-4)
+
+x =
+
+    10
+
+
+x =
+
+    0.5000
+
+
+x =
+
+    1.3042
+
+
+x =
+
+    2.2142
+
+
+x =
+
+    2.6456
+
+
+x =
+
+    2.7137
+
+
+x =
+
+    2.7181
+
+
+x =
+
+    2.7181
+
+quit
